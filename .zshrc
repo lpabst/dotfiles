@@ -37,3 +37,7 @@ gcpa() {
 
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 autoload -Uz compinit && compinit
+
+killport() {
+  kill -9 $(lsof -ti:$1)
+}
